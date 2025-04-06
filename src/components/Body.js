@@ -114,8 +114,16 @@ const Body = () => {
     console.log(json);
     // optional chaining
     // The ?. operator is like the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
-    setlistofrestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setfilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    // setlistofrestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    // setfilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    
+    const restaurants =
+    json?.data?.cards
+      ?.find((card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      ?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+
+  setlistofrestaurants(restaurants);
+  setfilteredRestaurant(restaurants);
   };
   // console.log("body rendered");
 
