@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
-import {Header} from "./components/Header"
+import {Header} from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import { createBrowserRouter , RouterProvider } from "react-router-dom";
@@ -30,8 +30,8 @@ const appRouter = createBrowserRouter([
   }]
 )
 // configuration means some infomrmation that will define what will be happen in specific route
-// createBrowserRouter will take a list of paths , path is just an array of object 
-// a page is a component in react 
+// createBrowserRouter will take a list of paths , path is just an array of object
+// a page is a component in react
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(<RouterProvider router={appRouter}/>)
