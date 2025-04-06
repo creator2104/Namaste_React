@@ -4,9 +4,10 @@ import Header from "./components/Header";
 import {Header} from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
-import { createBrowserRouter , RouterProvider } from "react-router-dom";
+import { createBrowserRouter , RouterProvider } from "react-router";
 // RouterProvider will provide config to our app
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 const Applayout = () => {
     return (
@@ -27,6 +28,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/about",
     element: <About />
+  },
+  {
+    path: "/contact",
+    element: <Contact/>
   }]
 )
 // configuration means some infomrmation that will define what will be happen in specific route
