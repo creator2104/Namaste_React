@@ -90,7 +90,7 @@
 // App5
 import RestaunrantCard from "./Restaurantcard";
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import {Shimmer} from "./Shimmer";
 
 const Body = () => {
   const [listofrestaurants, setlistofrestaurants] = useState([]);
@@ -111,7 +111,7 @@ const Body = () => {
     // fetch superpower is given by browser not js
     // fetch will fetch the data from the api
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     // optional chaining
     // The ?. operator is like the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
     // setlistofrestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -170,7 +170,7 @@ const Body = () => {
             const filteredList = listofrestaurants.filter(
               (res) => parseFloat(res.info.avgRatingString) > 4.3
             );
-            setlistofrestaurants(filteredList);
+            setfilteredRestaurant(filteredList);
           }}
         >
           Top Rated restaurants

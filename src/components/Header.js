@@ -2,6 +2,8 @@
 
 import { LOGO_URL } from "../utils/constants";
 import { useState,useEffect } from "react";
+import { Link } from "react-router";
+// link hook work exectly same as anchor tag
 
 export const Header = () => {
 
@@ -25,9 +27,10 @@ export const Header = () => {
         </div>
         <div className="nav-items">
          <ul>
-            <li>Home</li>
-            <li>About us</li>
-            <li>Contact us</li> 
+            <li> <Link to="/">Home</Link></li>
+            {/* never use anchor tag in react instead use link beacuse anchor tag reloads whole page everytime and link refreshes only perticular component */}
+            <li> <Link to="/about">About us</Link></li>
+            <li> <Link to="/contact">Contact us</Link></li> 
             <li>Cart</li>
             <button className="login-btn" onClick={()=>{
               btnNameReact=="Login" ? setbtnNameReact("Logout") : setbtnNameReact("Login")

@@ -80,3 +80,7 @@ most of the time in react we use 2nd approaoch bcz it gives the better UX (atlea
 - It uses cors preflight mechanism
   
 # currently all industry follows shimmer UI  
+
+# There are two types of routing 
+- Client side routing 
+- Server side routing 
