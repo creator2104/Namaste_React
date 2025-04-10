@@ -84,3 +84,14 @@ most of the time in react we use 2nd approaoch bcz it gives the better UX (atlea
 # There are two types of routing 
 - Client side routing 
 - Server side routing 
+
+# HOOKS
+1. createBrowserRouter - for routing components
+2. RouterProvider - provides routing configurations to our app (its  a component)
+3. Outlet - it is used as component (outlet filled with change of the path in his component, used for children routes) 
+4. useRouteError - to handle error page in web 
+
+use link instead of a for link redirection because it dosent refresh whole page it refreshes the component only
+<Link to=""></Link>
+
+5. useParams -  
