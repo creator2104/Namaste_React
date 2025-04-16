@@ -94,4 +94,14 @@ most of the time in react we use 2nd approaoch bcz it gives the better UX (atlea
 use link instead of a for link redirection because it dosent refresh whole page it refreshes the component only
 <Link to=""></Link>
 
-5. useParams -  
+5. useParams - useParams is a hook that returns an object containing the values of the dynamic parameters defined in your route path. 
+How to use it:
+ 1. Import: Import useParams from react-router-dom. 
+ 2. Define a route: In your routing configuration, define a route with dynamic parameters (e.g., /users/:id). 
+ 3. Access in component: In the component that renders when the route matches, use useParams to access the dynamic parameters.   
+
+Dynamic Routing: This hook is crucial for building dynamic and interactive web applications where content changes based on URL parameters.
+
+
+
+* class based components :-
