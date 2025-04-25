@@ -164,3 +164,36 @@ Copy
 Edit
 const add = a => b => a + b;
 console.log(add(2)(3)); // 5
+
+- function statement 
+- function a(){
+}
+
+- function expression
+- var b = function (){
+
+}
+
+- difference between function expression and function statement is hoisting 
+
+- function declaration = function statement
+
+- function without name is anonymous function 
+- function (){
+
+}
+- anonymous function is used when we want to use function as a value
+
+- named function expression
+var b = function xyz(par1,par2){
+
+} 
+xyz(1,2)  // ReferenceError
+- par1, par2 is parameter and 1,2 is used as an arguement
+
+- first class function 
+- the ability to use function as a value 
+var b = function xyz(par1){
+ clg(par1)
+}
+b(function (){}) 
