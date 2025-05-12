@@ -10,11 +10,11 @@ export const Header = () => {
   const [btnNameReact,setbtnNameReact] = useState("Login")
   // never write usestate in if condition ,for loop or in functions
   // never use useState outside your component , it doesn't make any sense
-  console.log("Header render");
+  // console.log("Header render");
   // we cant update a value in const but in react when we do with usestate it is creating new insatance for btnNameReact so no worries to use const 
 
   useEffect(()=>{
-    console.log("useEffect called");
+    // console.log("useEffect called");
   },[btnNameReact])
   // everytime my component renders useEffect would be called 
   // if no dependency array => useEffect is called on every render

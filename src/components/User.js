@@ -1,9 +1,15 @@
-const User = () => {
+import { useState } from "react";
+
+const User = ({name}) => {
+    const [count,setcount] = useState(0)//o is a initial value
+    const [count2,setcount2] = useState(1)//1 is a initial value
     return <div className="user-card">
-     <h2>Name: Vinit prajapati</h2>
+     <h1>count = {count}</h1>   
+     <h1>count = {count2}</h1>   
+     <h2>{name}</h2>
      <h3>Location: Surat, Gujarat</h3>
      <h4>Contact: 1234567890</h4>
     </div>
 }
 
-export default User
+export default User;

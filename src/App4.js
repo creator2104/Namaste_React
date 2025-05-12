@@ -16,6 +16,7 @@ const Applayout = () => {
         <div className="app">
           <Header/>
           <Outlet/>
+          {/* we cant see outlet in HTML because it is being replaced by children*/}
           {/* if path is / then body page will work */}
           {/* <Body/> */}
           {/* if path is /about then about page will work */}

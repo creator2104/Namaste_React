@@ -102,6 +102,65 @@ How to use it:
 
 Dynamic Routing: This hook is crucial for building dynamic and interactive web applications where content changes based on URL parameters.
 
+# Two types of routing 
+1. client side routing 
+2. server side routing 
+
+1. Client-Side Routing:
+In client-side routing, the navigation between pages is handled entirely in the browser without making a full request to the server.
+
+🚀 How It Works:
+Uses the HTML5 History API (pushState, replaceState, and popState).
+
+URL changes without reloading the page.
+
+JavaScript intercepts the navigation and renders the correct component.
+
+✅ Advantages:
+Fast Navigation: No full-page reloads; only the necessary components are re-rendered.
+
+Smooth User Experience: Feels like a single-page application (SPA).
+
+Reduced Server Load: Server sends the application once, and the client handles the rest.
+
+❌ Disadvantages:
+Initial Load Time: The first load might be slower due to loading the entire JavaScript bundle.
+
+SEO Challenges: Search engines may not effectively index dynamic content.
+
+404 Errors: Directly accessing a route may result in a "Not Found" error if not properly configured.
+
+In server-side routing, the server handles every navigation by sending a new HTML page upon each request.
+
+🚀 How It Works:
+A link click triggers a new HTTP request to the server.
+
+The server responds with a new HTML page.
+
+The entire page reloads.
+
+⚙️ Example: Traditional Websites
+
+<a href="/about">About</a>
+
+
+2. Server-Side Routing:
+
+In server-side routing, the server handles every navigation by sending a new HTML page upon each request.
+
+✅ Advantages:
+SEO-Friendly: Since the server sends pre-rendered HTML, it's easily crawled by search engines.
+
+Simple to Implement: Especially with traditional backend frameworks like Django, Laravel, or PHP.
+
+No 404 Issues: Direct URL access works naturally.
+
+❌ Disadvantages:
+Slower Navigation: Each page load requires a full server round-trip.
+
+Less Interactive: No smooth transitions between pages.
+
+Increased Server Load: Each click results in a new page request.
 
 
 * class based components :-

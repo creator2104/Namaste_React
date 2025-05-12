@@ -108,8 +108,6 @@ root.render(<Heading/>)
 //by this difference of brackets babel can understand which is react component and which is react element
  
 
-
-
 // To write HTML on multiple lines, put the HTML inside parentheses:
 // Create a list with three list items:
 // const myElement = (
@@ -153,3 +151,5 @@ root.render(<Heading/>)
 // Note that in order to embed a JavaScript expression inside JSX, the JavaScript must be wrapped with curly braces, {}.
 // const x = 5;
 // const myElement = <h1>{(x) < 10 ? "Hello" : "Goodbye"}</h1>;
+
+// Lexicographically - remember for js interviews
