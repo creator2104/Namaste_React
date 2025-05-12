@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const User = ({name}) => {
     const [count,setcount] = useState(0)//o is a initial value
     const [count2,setcount2] = useState(1)//1 is a initial value
+    useEffect(()=>{
+        // API calls
+    },[])
+    
+    async function getuserInfo(){
+        
+    }
     return <div className="user-card">
      <h1>count = {count}</h1>   
      <h1>count = {count2}</h1>   

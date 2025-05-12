@@ -40,24 +40,45 @@ class UserClass extends React.Component {
     // when you are loading a class based component that means i am creating an instance of a class 
     // whenver you create an instance of a class constuctor would get called and this would be best place to receive props and create state variables 
     this.state = {
-      count : 0,
-      count2 : 1,
+      // count : 0,
+      // count2 : 1,
+      userInfo : {
+        name : "Dummy",
+        location : "Default" ,
+      }
     }
-    console.log(this.props.name + "child constructor");
+    // console.log(this.props.name + "child constructor");
     // above this.state is a big object which contains all the state variables which is created by you
   }
-    componentDidMount() {
-      console.log(this.props.name + "child component did mount");
+    async componentDidMount() {
+      // console.log(this.props.name + "child component did mount");
       // first constuctor then render then did mount would printed 
+      const data = await fetch("https://api.github.com/users/akshaymarch7")
+      const json = await data.json()
+      // console.log(json);
+
+      this.setState({
+        userInfo : json
+      })
+      // this will update the dummy data to json fetched data from github api
+  }
+
+  componentDidUpdate(){
+    console.log("Component did update");
+  }
+
+  componentWillUnmount(){
+    console.log("component will mount");
   }
     render() {
-      console.log(this.props.name+"child render");
-        const {name,location} = this.props
-        const {count,count2} = this.state
+      // console.log(this.props.name+"child render");
+        // const {name,location} = this.props
+        // const {count,count2} = this.state
+        const {name,location,avatar_url} = this.state.userInfo
     return (
       <div className="user-card">
-        <h1>count : {count}</h1>
-        <h1>count : {count2}</h1>
+        {/* <h1>count : {count}</h1>
+        <h1>count : {count2}</h1> */}
         <button onClick={()=>{
           // never update state variables directly 
           this.setState({
@@ -67,6 +88,7 @@ class UserClass extends React.Component {
           })
           // this.setState will update the value of count and it contains the updated value of your set varibles 
         }}>Count increase</button>
+        <img src={avatar_url}/>
         <h2>Name : {name}</h2>
         <h3>Location : {location}</h3>
         <h4>Contact: 1234567890</h4>
@@ -77,3 +99,17 @@ class UserClass extends React.Component {
 // render method returns a piece of jsx which will be displayed to the UI
 export default UserClass;
 
+/*
+-------------Mounting-----------------
+cosntructor(dummy)
+render(dummy)
+<HTML dummy>
+component did mount
+<API calls>
+<this.setState> -> state varible is updated
+
+------------updated------------------
+render(API data)
+<HTML (new API data)>
+componentdid update
+*/ 
