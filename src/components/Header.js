@@ -34,6 +34,7 @@ export const Header = () => {
               Online Status: {OnlineStatus ? "✅" : "🛑"} 
             </li>
             <li> <Link to="/">Home</Link></li>
+            <li> <Link to="/grocery">Grocery</Link></li>
             {/* never use anchor tag in react instead use link beacuse anchor tag reloads whole page everytime and link refreshes only perticular component */}
             <li> <Link to="/about">About us</Link></li>
             <li> <Link to="/contact">Contact us</Link></li> 
