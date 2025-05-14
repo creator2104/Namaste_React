@@ -3,6 +3,7 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState,useEffect } from "react";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 // link hook work exectly same as anchor tag
 
 export const Header = () => {
@@ -20,6 +21,8 @@ export const Header = () => {
   // if no dependency array => useEffect is called on every render
   // if dependecy array is empty = [] => useEffect is called on iniial render (just once) 
   // if dependecy array is [btnNameReact] => useEffect is called everytime btnNameReact is updated 
+
+    const OnlineStatus = useOnlineStatus()
     return (
         <div className="header">
         <div className="logo-container">
@@ -27,6 +30,9 @@ export const Header = () => {
         </div>
         <div className="nav-items">
          <ul>
+            <li>
+              Online Status: {OnlineStatus ? "✅" : "🛑"} 
+            </li>
             <li> <Link to="/">Home</Link></li>
             {/* never use anchor tag in react instead use link beacuse anchor tag reloads whole page everytime and link refreshes only perticular component */}
             <li> <Link to="/about">About us</Link></li>
