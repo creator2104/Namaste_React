@@ -13,11 +13,14 @@
     </div>
 </body>
 
+<!-- A CDN (Content Delivery Network) link is a URL that directs users to a specific piece of content hosted on a CDN server. Instead of fetching content directly from the origin server (where your website is hosted), the CDN provides a cached copy of the content from a server closer to the user's location, resulting in faster loading times -->
 <!-- this cdn links are not preferred way to bring react to your project -->
 <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script> -->
 <!-- Below one link used for DOM manipulation in react -->
 <!-- <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
 <script type="module" src="/App.js">
+// order of script tags do matter for execution of the code 
+
 
 // package.json file is configuration for npm
 // npm is a package manager , it manages all packages that will install in our system
@@ -29,20 +32,29 @@
 // dev dependecies is used while we developing our app and normal dependecies are used in production
 // npm install -D parcel
 // -D means dev dependecies
-// package-loc.json keep tracks the versions of all the dependecies
+// package-loc.json keep tracks the exact version of all the dependecies
+// In package-loc.json hash which is located in integrity , hash makes local machine code working to production level working code 
 // you don't need to push node modules to git u can regenerate it from package and package-lock.json with using command (npm install) 
+// transitive dependencies
+// In the context of software or database design, a transitive dependency is an indirect dependency, meaning that one component relies on another, which in turn relies on a third component. This creates a chain of dependencies where the original component is indirectly reliant on the final component
 
 //npm used for installing a package and npx used for executing a package
+// What is the difference between NPX and NPM medium? NPM is a package management that is used to install, uninstall, and update Javascript packages on your workstation, whereas NPX is a package executer that is used to directly execute Javascript packages without installing them.
 </script>
 </html>
 
 
-<!-- npm init to start creating package.json -->
+<!-- npm init to start creating package.json with given information-->
 <!-- npm install -D parcel to install parcel  -->
-<!-- npm install used to install node modules -->
+<!-- npm install used to install node modules and package-lock.json-->
+ <!-- if u delete node modules and wanna recreate it so write npm install -->
 <!-- npx parcel index.html  to start the server -->
 <!-- npm install react to install react-->
 <!-- npm i react-dom to install react-dom-->
 <!-- npm run start  -->
-<!-- npm start  -->
 <!-- npm run build  -->
+<!-- .parcel-cache is used by parcel(bundler) to reduce the building time. It stores information about your
+project when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything
+from scratch. It's a key reason why parcel can be so fast in development mode. -->
+<!-- u can delete dist and .parcel cache and recreate while running server -->
+ <!-- dist is making production ready app for you it bundles the thing up -->

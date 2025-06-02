@@ -3,8 +3,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 // the below one React came from cdn links
+// react.createElement will give you an object and to convert it into h1 tag and put it on the dom 
 const heading = React.createElement(
-"h1",
+"h1", 
 // create element belongs from react
 // react element(heading) is just a js object
 { id: "heading", xyz: "abc" },  "Hello from react!");
@@ -17,8 +18,6 @@ root.render(heading);
 // attach heading into the root
 // render method convert the object into html h1 tag while rendering 
 //ReactElement(object) => HTML(Browser Understands)
-
-
 
 // <div id="parent">
 // <div id="child">
@@ -46,8 +45,6 @@ root.render(heading);
 // console.log(parent);   // it gives an object at output
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(parent) 
-
-
 
 // "start": "parcel index.html",
 // "start2": "parcel index2.html",

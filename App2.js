@@ -11,18 +11,22 @@ import ReactDOM from "react-dom/client";
 
 //JSX
 
-const jsxheading = <h1 className="head">Namaste react in JSX</h1>
+// our browser cant understand jsx so babel traspiled our jsx into reqact.createelement and then it would converted to object and rendered into html
+// babel can convert the code which older browsers can understand easily
+
+const jsxheading =( <h1 className="head">
+    Namaste react in JSX</h1>)
 //this is how u create react element using JSX
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(jsxheading)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(jsxheading);
 //use camelcase to give attribute to jsx (ex :- className)
 
 // Js engine can't understand JSX it is done by parcel
 
-// the code is being transpiled(converted JSX into react or browser understanding) before entering into JS engine by Babel (parcel gives this work of traspilation to Babel) 
+// the code is being transpiled(converted JSX into react or browser understanding) before entering into JS engine by Babel (parcel gives this work of traspilation to Babel)
 
-// JSX => Babel transapiles it to React.createElement (transpiled) => ReactElement - JS Object => HTMLElement(render) (babel is converting this stuff) 
+// JSX => Babel transapiles it to React.createElement (transpiled) => ReactElement - JS Object => HTMLElement(render) (babel is converting this stuff)
 
 // Babel is a Js compiler
 
@@ -31,17 +35,18 @@ root.render(jsxheading)
 // JSX have HTML or XML likely syntax
 
 // React and JSX are both different
- 
+
 // console.log(heading);
 //both heading and jsxheading are same object bcz jsx is converted into react element by babel at the end
 // console.log(jsxheading)
 
-
 //React element
-const elem = <span>React element</span>
-const jsxheading2 = (<h1 id="heading" className="head">
+const elem = <span>React element</span>;
+const jsxheading2 = (
+  <h1 id="heading" className="head">
     Namaste react in JSX2
-    </h1>)
+  </h1>
+);
 //if u write like above jsx in mutiple lines then use () braces so babel can understand where jsx starting and ending
 
 // If a function returns a react element its known as react components
@@ -61,52 +66,51 @@ const jsxheading2 = (<h1 id="heading" className="head">
 
 // write first capital letter in name of react component (Title)
 
-// else 
+// else
 
 // write like this(preferrable way in industry)
 const Title = () => (
-    <h1 className="heading">
+  <h1 className="heading">
     {elem}
     Namaste react using JSX
-    </h1>
-)
+  </h1>
+);
 
-const number = 1000
+const number = 1000;
 // const data = api.getData()
-// React functional components - its a just js function which returns a piece code of jsx or a react element 
+// React functional components - its a just js function which returns a piece code of jsx or a react element
 const Heading = () => (
-    <div id="container">
+  <div id="container">
     <h1 className="heading">Namaste react functional components</h1>
 
-        {jsxheading}
+    {jsxheading}
 
-        {/* {data} */}
-        {/* suppose we are fetching api and some hacker doing cross-site scripting attack then jsx would not blindly run it in curly braces , it will sanitize your data and then pass it to u (it prevents this kinda attacks so feel free to use api or anything in jsx)*/}
- 
-        <Title />  
-        {/* else you can write like below */}
-        {Title()}
-        {/* at the end of the day react component is a normal js function so you can call it directly */}
-        {/* else you can write like below */}
-        <Title></Title>
-        {/* if i want to render(add) title inside div container then write like above and this thing is known as composite composition (you're composing two composite to one another)*/}
-        
-        <h2>{number}</h2>
-        <h2>{100+200}</h2>
-        <h2>{console.log("vinit")}</h2>
-        {/* between two curly braces you can write any js code */}
+    {/* {data} */}
+    {/* suppose we are fetching api and some hacker doing cross-site scripting attack then jsx would not blindly run it in curly braces , it will sanitize your data and then pass it to u (it prevents this kinda attacks so feel free to use api or anything in jsx)*/}
 
-        {jsxheading2}
-        {/* this react element is end of the day its a js so u can write in curly braces*/}
-    </div>
-)
+    <Title />
+    {/* else you can write like below */}
+    {Title()}
+    {/* at the end of the day react component is a normal js function so you can call it directly */}
+    {/* else you can write like below */}
+    <Title></Title>
+    {/* if i want to render(add) title inside div container then write like above and this thing is known as composite composition (you're composing two composite to one another)*/}
+
+    <h2>{number}</h2>
+    <h2>{100 + 200}</h2>
+    <h2>{console.log("vinit")}</h2>
+    {/* between two curly braces you can write any js code */}
+
+    {jsxheading2}
+    {/* this react element is end of the day its a js so u can write in curly braces*/}
+  </div>
+);
 
 // const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(<Heading/>)
+root.render(<Heading />);
 // only react element can be rendered directly ex:- (heading) but to render react component u have to wrape it in </>(<heading/>)
 //by this difference of brackets babel can understand which is react component and which is react element
- 
 
 // To write HTML on multiple lines, put the HTML inside parentheses:
 // Create a list with three list items:
@@ -118,7 +122,6 @@ root.render(<Heading/>)
 //     </ul>
 //   );
 
-
 // The HTML code must be wrapped in ONE top level element.
 // So if you like to write two paragraphs, you must put them inside a parent element, like a div element.
 // Wrap two paragraphs inside one DIV element:
@@ -128,7 +131,6 @@ root.render(<Heading/>)
 //   <p>I am a paragraph too.</p>
 // </div>
 // );
-
 
 // Alternatively, you can use a "fragment" to wrap multiple lines. This will prevent unnecessarily adding extra nodes to the DOM.
 // A fragment looks like an empty HTML tag: <></>.
@@ -140,11 +142,9 @@ root.render(<Heading/>)
 //     </>
 //   );
 
-
 // JSX follows XML rules, and therefore HTML elements must be properly closed.
 // const myElement = <input type="text" />;
 // JSX will throw an error if the HTML is not properly closed.
-
 
 // React supports if statements, but not inside JSX.
 // Use ternary expressions instead:
